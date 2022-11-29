@@ -1,0 +1,368 @@
+<html>
+    
+    <head>
+        <title>Upload Image</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='myfont/css/all.min.css')}}">
+		<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+        <style>
+            #myimg{
+                height:250px;
+                width:235px;
+                box-shadow:5px 5px 15px 3px black;
+                margin-bottom:20px;
+            }
+            .del{
+                margin-bottom:50px;
+            }
+        </style>
+    </head>
+    <head>
+        <meta charset="UTF-8">
+    
+         <style>
+            .shadow{
+                box-shadow:3px 3px 10px black;
+                padding:30px;
+            }
+        </style>
+        <head>
+            <meta charset="UTF-8">
+            <title>Display image</title>
+        
+             <style>
+                .shadow{
+                    box-shadow:3px 3px 10px black;
+                    padding:30px;
+                }
+            </style>
+            <style>
+                #myimg{
+                    height:250px;
+                    width:235px;
+                    box-shadow:5px 5px 15px 3px black;
+                    margin-bottom:20px;
+                }
+                .del{
+                    margin-bottom:50px;
+                }
+                *{
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: sans-serif;
+                }
+                .inputBox {
+                        position: relative;
+                        width: 400px;
+                      }
+                header{
+                    height: 60px;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    z-index: 2;
+                }
+                #logo{
+                    line-height: 60px;
+                    margin-left: 40px;
+                    display: inline-block;
+                    cursor: pointer;
+                    font-size: 30px;
+                    font-weight: bold;
+                    color: #66afe9; /* blue */
+                }
+                #logo:hover{
+                    color: #4d7eb0;
+                }
+                #logo-s{
+                    color:#4d7eb0; /* white */
+                    margin-left: 5px;
+                }
+                #logo:hover #logo-s{
+                    color: #66afe9; /* blue */
+                }
+                .sign{
+                    float: right;
+                    line-height: 60px;
+                    margin-right: 40px;
+                }
+                .sign a{
+                    color: #fff;
+                    font-weight: bold;
+                    text-decoration: none;
+                }
+                .act{
+                    border: 2px solid #fff;
+                    border-radius: 50px;
+                    padding: 6px 15px;
+                }
+                .sign a:hover{
+                    color: #66afe9; /* blue */
+                    border-color: #66afe9; /* blue */
+                }
+                /* /1 */
+                
+                /* 2 */
+                .slider{
+                    position: relative;
+                    width: 100%;
+                    
+                    background: white; /* darckblue */
+                }
+                .myslide{
+                    height: 800px;
+                    display: none;
+                    overflow: hidden;
+                }
+                
+                .prev, .next{
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    font-size: 50px;
+                    padding: 15px;
+                    cursor: pointer;
+                    color: #fff;
+                    transition: 0.1s;
+                    user-select: none;
+                }
+                .prev:hover, .next:hover{
+                    color: #66afe9;
+                }
+                .next{
+                    right: 0;
+                }
+                .dotsbox{
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%);
+                    bottom: 20px;
+                    cursor: pointer;
+                }
+                .dot{
+                    display: inline-block;
+                    width: 15px;
+                    height: 15px;
+                    border: 3px solid #fff;
+                    border-radius: 50%;
+                    margin: 0 10px;
+                    cursor: pointer;
+                }
+                /* /2 */
+                
+                /* javascript */
+                .active, .dot:hover{
+                    border-color: #66afe9; /* blue */
+                }
+                /* /javascript */
+                
+                /* muslide add fade */
+                .fade {
+                  -webkit-animation-name: fade;
+                  -webkit-animation-duration: 1.5s;
+                  animation-name: fade;
+                  animation-duration: 1.5s;
+                }
+                
+                @-webkit-keyframes fade {
+                  from {opacity: 0.8}
+                  to {opacity: 1}
+                }
+                
+                @keyframes fade {
+                  from {opacity: 0.8}
+                  to {opacity: 1}
+                }
+                /* /muslide add fade */
+                
+                /* 3 */
+                
+                
+                
+                
+                .txt h1{
+                    color: #66afe9; /* blue */
+                    font-size: 50px;
+                    margin-bottom: 20px;
+                }
+                
+                /* /3 */
+                
+                /* 4 */
+                
+                
+                
+                
+                
+                /* /4 */
+                
+                
+                
+                /* 5 */
+                
+                
+                    
+                
+                    .txt h1{
+                        font-size: 40px;
+                    }
+                  .inputBox input {
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid blue;
+                        background: white;
+                        border-radius: 5px;
+                        outline: none;
+                        color: #fff;
+                        font-size: 1em;
+                        transition: 0.5s;
+                      }
+                  .inputBox span {
+                        
+                       
+                        
+                        pointer-events: none;
+                        font-size: 1.1em;
+                        letter-spacing: 0.2em;
+                        color: blue;
+                        margin-bottom: 50px;
+                        
+                       
+                      }
+                      
+                     
+                      
+                      
+                      
+                      
+                    
+                
+                
+                /* /5 */
+                
+                /* 6 */
+                
+                
+                /* /6 */
+                
+                button:hover {
+                background-color: white;
+                color: #66afe9;
+                font-size: 20px;
+                border: 2px solid #66afe9;
+              }
+              a {
+                display: inline-block;
+
+                  
+                background: #66afe9;
+                color:#66afe9 ;
+        
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                margin: 10px;
+                border-radius: 3px;
+              }
+        
+              .display_button {
+                color: #66afe9;
+                border: none;
+                font-weight: bold;
+                width: 140px;
+                height: 140px;
+                border-radius: 50%;
+                background-color: white;
+        
+                margin-top: 230px;
+                margin-left: 300px;
+              }
+              .btn {
+                  position: relative;
+                  display: inline-block;
+                  margin: 15px;
+                  padding: 15px 30px;
+                  text-align: center;
+                  font-size: 16px;
+                  letter-spacing: 1px;
+                  text-decoration: none;
+                  
+                  
+                  background: transparent;
+                  border: 2px solid white;
+                  cursor: pointer;
+                  transition: ease-out 0.5s;
+                  -webkit-transition: ease-out 0.5s;
+                  -moz-transition: ease-out 0.5s;
+              }
+                  .btn.btn-slide-9,.btn.home,.btn.newpair,.btn.displayimg,.btn.displaykeys,.btn.memcache {
+                      border-radius: 10px;
+                      border: 2px solid white;
+                      box-shadow: inset 0 0 0 0 white;
+                  }
+                  
+                  .btn.btn-slide-9:hover,.btn.home:hover,.btn.newpair:hover,.btn.displayimg:hover,.btn.displaykeys:hover,.btn.memcache:hover  {
+                    
+                      box-shadow: inset 0 0 200px 0 #66afe9;
+                  }
+                    </style>
+                    <header>
+                      <div id="logo">Three <span id="logo-s">Clouds</span></div>
+                      <br />
+                      <nav class="doha">
+                        <a href="/home" class="btn home  " style="background-color: #66afe9;color: white;">Home</a>
+                        <a href="/upload" class="btn newpair" style="background-color: #66afe9;color: white;">Upload</a>
+                        <a href="/display" class="btn displayimg" style="background-color: #66afe9;color: white;">Display image</a>   
+                        <a href="/keys" class="btn displaykeys" style="background-color: #66afe9;color: white;">Display keys</a>
+                        <a href="/config" class="btn memcache" style="background-color: #66afe9;color: white;">Memory cache</a>
+                        <a href="/cacheinfo" class="btn memcache" style="background-color: #66afe9;color: white;">Cache information</a>
+                       </nav>
+                    </header>
+        
+    </head>
+    <body>
+        <div class="col-md-offset-3 col-md-5" style="margin-top:150px">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category,message in messages %}
+                            <div class="alert alert-{{category}}">{{message}}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <div class="form-group">
+                    <div class="form-group">
+                        <label>Enter Key:</label>
+                        <input type="number" class="form-control" name="key" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter image path:</label>
+                        <input type="text" class="form-control" name="path" required>
+                    </div>
+                    <label>Browse Image</label>
+                    <input type="file" class="form-control" name="upload_image" required accept="image/*">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-block"style="color: white;background-color: #337ab7;border-color: #337ab7;margin-right:15px">
+                </div>
+                
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-5">
+                {% for res in data %}
+                    <div class="col-md-4">
+                        <img src="static/images/{{res['img']}}" id="myimg" alt="No Image">
+                        <a href="{{url_for('delete_record',id=res['key'])}}" class="btn btn-danger btn-block del" style="color:white;background-color:#d9534f;border-color: #d9534f;">Delete</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+    $(document).ready(function(){
+        $(".alert").hide(4000);
+    });
+</script>
